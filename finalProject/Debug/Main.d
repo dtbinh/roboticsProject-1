@@ -11,9 +11,7 @@ Main.d Main.o: ../Main.cpp \
   /usr/local/include/player-2.0/libplayerc++/playerc++config.h \
   /usr/local/include/player-2.0/libplayerc++/playerclient.h \
   /usr/local/include/player-2.0/libplayerc++/playererror.h \
-  /usr/local/include/player-2.0/libplayerc++/clientproxy.h ../Map/Map.h \
-  ../Map/../Utils/lodepng.h ../Way/AStar.h ../Way/Node.h \
-  ../Way/../Map/Map.h ../Utils/ParametersFile.h ../Utils/Utils.h
+  /usr/local/include/player-2.0/libplayerc++/clientproxy.h
 
 /usr/local/include/player-2.0/libplayerc++/playerc++.h:
 
@@ -40,17 +38,3 @@ Main.d Main.o: ../Main.cpp \
 /usr/local/include/player-2.0/libplayerc++/playererror.h:
 
 /usr/local/include/player-2.0/libplayerc++/clientproxy.h:
-
-../Map/Map.h:
-
-../Map/../Utils/lodepng.h:
-
-../Way/AStar.h:
-
-../Way/Node.h:
-
-../Way/../Map/Map.h:
-
-../Utils/ParametersFile.h:
-
-../Utils/Utils.h:

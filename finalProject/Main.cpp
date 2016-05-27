@@ -5,10 +5,6 @@
  * Course: Robotics
  */
 #include <libplayerc++/playerc++.h>
-#include "Map/Map.h"
-#include "Way/AStar.h"
-#include "Utils/ParametersFile.h"
-#include "Utils/Utils.h"
 
 using namespace PlayerCc;
 using namespace std;
