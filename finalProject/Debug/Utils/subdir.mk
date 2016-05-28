@@ -4,12 +4,15 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../Utils/lodepng.cpp \
 ../Utils/structs.cpp 
 
 OBJS += \
+./Utils/lodepng.o \
 ./Utils/structs.o 
 
 CPP_DEPS += \
+./Utils/lodepng.d \
 ./Utils/structs.d 
 
 

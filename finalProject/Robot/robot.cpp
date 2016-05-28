@@ -44,5 +44,5 @@ void Robot::setSpeed(double speed, double angularSpeed)
 
 void Robot::Read()
 {
-	_playerClient->Read();
+	_PlayerClient->Read();
 }
