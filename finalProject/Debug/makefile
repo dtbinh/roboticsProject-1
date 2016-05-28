@@ -9,6 +9,14 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir.mk
+-include WaypointsManager/subdir.mk
+-include Utils/subdir.mk
+-include Robot/subdir.mk
+-include PathPlanner/subdir.mk
+-include Particle/subdir.mk
+-include Map/subdir.mk
+-include LocalizationManager/subdir.mk
+-include ConfigurationManager/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)

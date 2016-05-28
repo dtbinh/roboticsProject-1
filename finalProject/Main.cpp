@@ -5,7 +5,7 @@
  * Course: Robotics
  */
 #include <libplayerc++/playerc++.h>
-
+#include "ConfigurationManager/configuration_manager.h"
 using namespace PlayerCc;
 using namespace std;
 
@@ -20,6 +20,10 @@ char *PARAMETER_FILE_PATH = "/home/user/Desktop/parameters.txt";
 
 int main(int argc, char** argv)
 {
+	ConfigurationManager* cmManager = new
+				ConfigurationManager(PARAMETER_FILE_PATH);
+
+
 	PlayerClient robot("localhost",6665);
 	Position2dProxy pp(&robot,0);
 	LaserProxy laser(&robot);
