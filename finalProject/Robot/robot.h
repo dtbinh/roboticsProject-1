@@ -18,6 +18,7 @@ using namespace PlayerCc;
 
 class Robot {
 
+private:
 	PlayerClient* _PlayerClient;
 	Position2dProxy* _PositionProxy;
 	LaserProxy* _LaserProxy;
@@ -25,6 +26,9 @@ class Robot {
 	double Y;
 	double Yaw;
 	double startYaw;
+	Robot(const Robot &);
+	Robot();
+	static Robot* pRobot;
 
 public:
 	double startPoseX;
@@ -34,7 +38,9 @@ public:
 	double goalPoseY;
 	double robotWidth;
 	double robotHeight;
-	void Init(char* ip, int port, bool bMotor);
+	~Robot();
+//	static Robot* getRobot(char* ip, int port, bool bMotor);
+	static Robot* getRobot();
 	double getX();
 	double getY();
 	double getYaw();
