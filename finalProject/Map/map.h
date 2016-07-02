@@ -15,7 +15,7 @@ using namespace std;
 class Map{
 private:
 public:
-	Map(string& map_path);
+	Map(char *map_path);
 	vector<unsigned char> image; // Raw pixels
 	unsigned width, height;
 };

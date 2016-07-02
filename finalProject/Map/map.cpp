@@ -7,7 +7,7 @@
 #include "map.h"
 
 
-Map::Map (string& file_path) {
+Map::Map (char *file_path) {
 	vector<unsigned char> map;
 
 	// Load the map from the given file.
