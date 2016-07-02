@@ -6,6 +6,8 @@
  */
 #include <libplayerc++/playerc++.h>
 #include "ConfigurationManager/configuration_manager.h"
+#include "Robot/robot.h"
+#include "Map/map.h"
 using namespace PlayerCc;
 using namespace std;
 
@@ -20,16 +22,16 @@ char *PARAMETER_FILE_PATH = "/home/user/Desktop/parameters.txt";
 
 int main(int argc, char** argv)
 {
-	ConfigurationManager* cmManager = new
-				ConfigurationManager(PARAMETER_FILE_PATH);
+	ConfigurationManager* cmManager = new ConfigurationManager(PARAMETER_FILE_PATH);
+	Map* mMap = new Map(PARAMETER_FILE_PATH);
+	Robot* robot = Robot::getRobot();
 
-
-	PlayerClient robot("localhost",6665);
-	Position2dProxy pp(&robot,0);
-	LaserProxy laser(&robot);
-	pp.SetMotorEnable(false);
-	robot.Read();
-
+	robot->setSpeed(1,0);
+	while(true)
+	{
+		robot->Read();
+		//robot->setSpeed(1,0);
+	}
 
 }
 
