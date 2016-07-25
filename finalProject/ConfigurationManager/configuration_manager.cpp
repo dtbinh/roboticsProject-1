@@ -8,13 +8,13 @@
 
 ConfigurationManager::ConfigurationManager(char *file_path)
 {
-	setParameters(file_path, mapPath, &startLocation, mapResolutionCM,
-				gridResolutionCM, &goal,&robotSize);
+	this->startLocation = new Location();
+	this->goal = new point();
+	this->robotSize = new point();
+	setParameters(file_path);
 }
 
-void ConfigurationManager::setParameters(char *file_path,string& mapPath,
-		Location *startLocation,double &mapResolutionCM,
-		double &gridResolutionCM, point *goal, point *robotSize){
+void ConfigurationManager::setParameters(char *file_path){
 	string line, temp_substring;
 	ifstream parameters_file;
 	parameters_file.open(file_path);
@@ -23,40 +23,42 @@ void ConfigurationManager::setParameters(char *file_path,string& mapPath,
 		getline(parameters_file, line);
 
 		// Get mapPath parameters.
-		mapPath = line.substr(line.find(": ")+2);
+		string temp_map = line.substr(line.find(": ")+2);
+		this->mapPath= temp_map.substr(0,temp_map.length()-1).c_str();
+
 
 		// Get startLocation parameters
 		getline(parameters_file, line);
 		line = line.substr(line.find(" ")+1);
-		startLocation->X = atoi((line.substr(0,line.find(" ")+1)).c_str());
+		this->startLocation->X = atoi((line.substr(0,line.find(" ")+1)).c_str());
 		line = line.substr(line.find(" ")+1);
-		startLocation->Y = atoi(line.substr(0,line.find(" ")+1).c_str());
+		this->startLocation->Y = atoi(line.substr(0,line.find(" ")+1).c_str());
 		line = line.substr(line.find(" ")+1);
-		startLocation->Yaw = atoi(line.c_str());
+		this->startLocation->Yaw = atoi(line.c_str());
 
 		// Get goal parameter.
 		getline(parameters_file, line);
 		line = line.substr(line.find(": ")+2);
-		goal->X = atoi(line.substr(0,line.find(" ")+1).c_str());
+		this->goal->X = atoi(line.substr(0,line.find(" ")+1).c_str());
 		line = line.substr(line.find(" ")+1);
-		goal->Y = atoi(line.c_str());
+		this->goal->Y = atoi(line.c_str());
 
 		// Get robotSize parameter.
 		getline(parameters_file, line);
 		line = line.substr(line.find(": ")+2);
-		robotSize->X = atoi(line.substr(0,line.find(" ")+1).c_str());
+		this->robotSize->X = atoi(line.substr(0,line.find(" ")+1).c_str());
 		line = line.substr(line.find(" ")+1);
-		robotSize->Y = atoi(line.c_str());
+		this->robotSize->Y = atoi(line.c_str());
 
 		// Get mapResolutionCM
 		getline(parameters_file, line);
 		line = line.substr(line.find(": ")+2);
-		mapResolutionCM = atof(line.c_str());
+		this->mapResolutionCM = atof(line.c_str());
 
 		// Get gridResolutionCM
 		getline(parameters_file, line);
 		line = line.substr(line.find(": ")+2);
-		gridResolutionCM = atof(line.c_str());
+		this->gridResolutionCM = atof(line.c_str());
 
 		parameters_file.close();
 	}

@@ -23,7 +23,9 @@ char *PARAMETER_FILE_PATH = "/home/user/Desktop/parameters.txt";
 int main(int argc, char** argv)
 {
 	ConfigurationManager* cmManager = new ConfigurationManager(PARAMETER_FILE_PATH);
-	Map* mMap = new Map(PARAMETER_FILE_PATH);
+
+	Map* mMap = new Map(cmManager->mapPath);
+
 	Robot* robot = Robot::getRobot();
 
 	robot->setSpeed(1,0);

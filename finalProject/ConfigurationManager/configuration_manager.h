@@ -18,12 +18,11 @@ using namespace std;
 class ConfigurationManager
 {
 public:
-	Location startLocation;
-	string mapPath;
+	Location *startLocation;
+	const char* mapPath;
 	double mapResolutionCM, gridResolutionCM;
-	point goal, robotSize;
+	point* goal, *robotSize;
 	ConfigurationManager(char *file_path);
 private:
-	void setParameters(char *file_path,string& mapPath, Location *startLocation,double &mapResolutionCM,
-			double &gridResolutionCM, point *goal, point *robotSize);
+	void setParameters(char *file_path);
 };

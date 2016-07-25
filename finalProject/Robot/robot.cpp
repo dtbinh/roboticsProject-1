@@ -47,7 +47,11 @@ double Robot::getY()
 
 double Robot::getYaw()
 {
-	return Yaw;
+	double degree = RadianToDegree(_PositionProxy->GetYaw());
+	if (degree < 0) {
+		degree = 360 + degree;
+	}
+	return degree;
 }
 
 void Robot::setSpeed(double speed, double angularSpeed)
