@@ -18,9 +18,10 @@ public:
 	Map(const char* map_path,
 			double mapResolution);
 	vector<unsigned char> image; // Raw pixels
+	vector<unsigned char> imageAfterBlow;
 	unsigned width, height;
 	double resolution;
-	void MapResizing(double robotHeight, double robotWidth);
+	void MapBlowing(double robotHeight, double robotWidth);
 };
 
 #endif /* MAP_H_ */

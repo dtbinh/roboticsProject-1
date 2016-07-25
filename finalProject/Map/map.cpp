@@ -21,7 +21,9 @@ Map::Map (const char* file_path, double mapResolution) {
 									lodepng_error_text(error) << endl;
 }
 
-void Map::MapResizing(double robotHeight, double robotWidth) {
+void Map::MapBlowing(double robotHeight, double robotWidth) {
+	this->imageAfterBlow.resize(this->image.size());
+
 
 }
 
