@@ -15,9 +15,12 @@ using namespace std;
 class Map{
 private:
 public:
-	Map(const char* map_path);
+	Map(const char* map_path,
+			double mapResolution);
 	vector<unsigned char> image; // Raw pixels
 	unsigned width, height;
+	double resolution;
+	void MapResizing(double robotHeight, double robotWidth);
 };
 
 #endif /* MAP_H_ */

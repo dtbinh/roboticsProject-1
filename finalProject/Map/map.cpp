@@ -7,7 +7,9 @@
 #include "map.h"
 
 
-Map::Map (const char* file_path) {
+Map::Map (const char* file_path, double mapResolution) {
+	this->resolution = mapResolution;
+
 	vector<unsigned char> map;
 
 	// Load the map from the given file.
@@ -18,3 +20,8 @@ Map::Map (const char* file_path) {
 	if(error) cout << "decoder error " << error << ": " <<
 									lodepng_error_text(error) << endl;
 }
+
+void Map::MapResizing(double robotHeight, double robotWidth) {
+
+}
+
