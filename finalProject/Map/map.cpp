@@ -22,8 +22,19 @@ Map::Map (const char* file_path, double mapResolution) {
 }
 
 void Map::MapBlowing(double robotHeight, double robotWidth) {
-	this->imageAfterBlow.resize(this->image.size());
+	//this->imageAfterBlow.resize(this->image.size());
+	//	for (int i=0;i<this->image.size(); i++){
+	//			this->imageAfterBlow[i] = this->image[i];
+	//	}
 
+	// Copy image to imageAfterBlow
+	this->imageAfterBlow = new vector<unsigned char>(this->image);
+
+	for (int nRow=0; nRow < this->height; nRow++){
+		for (int nCol=0; nCol < this->width; nCol++){
+
+		}
+	}
 
 }
 
