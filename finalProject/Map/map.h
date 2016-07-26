@@ -16,15 +16,19 @@ class Map{
 private:
 public:
 	Map(const char* map_path,
-			double mapResolution);
+			double mapResolution,
+			double gridResolution);
 	vector<unsigned char> image; // Raw pixels
 	vector<unsigned char> imageAfterBlow;
 	enum CELL 							{FREE, OCCUPIED};
 	std::vector< std::vector<CELL> > 	vMapMatrix;
 	unsigned int width, height;
-	double resolution;
+	double mapResolution;
+	double gridResolution;
 	void MapBlowing(double robotHeight, double robotWidth);
 	void WeightCell(int nRow, int nCol, double resolution);
+	void CreateMatrix();
+	double GetGridMapResolution();
 };
 
 #endif /* MAP_H_ */

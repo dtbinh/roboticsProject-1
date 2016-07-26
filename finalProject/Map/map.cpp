@@ -7,14 +7,16 @@
 #include "map.h"
 
 
-Map::Map (const char* file_path, double mapResolution) {
-	this->resolution = mapResolution;
+Map::Map (const char* file_path, double mapResolution, double gridResolution) {
+	this->mapResolution = mapResolution;
+	this->gridResolution = gridResolution;
 
 	vector<unsigned char> map;
 
 	// Load the map from the given file.
 	lodepng::load_file(map,file_path);
-	unsigned error = lodepng::decode(image, width, height, map);
+	unsigned error = lodepng::decode(this->image, this->width,
+			this->height, map);
 
 	// If there is error, display it
 	if(error) cout << "decoder error " << error << ": " <<
@@ -37,7 +39,7 @@ void Map::MapBlowing(double robotHeight, double robotWidth) {
 					(this->image[nRow * width * 4 + nCol * 4 + 1] == 0) &
 					(this->image[nRow *  width * 4 + nCol * 4 + 2] == 0))
 			{
-				this->WeightCell(nRow, nCol, this->resolution);
+				this->WeightCell(nRow, nCol, this->mapResolution);
 			}
 		}
 	}
@@ -62,5 +64,13 @@ void Map::WeightCell(int nRow, int nCol, double resolution) {
 			}
 		}
 	}
+}
+
+void Map::CreateMatrix() {
+	int nPixelInGrid = this->GetGridMapResolution();
+}
+
+double Map::GetGridMapResolution(){
+	return (this->gridResolution/ this->mapResolution);
 }
 

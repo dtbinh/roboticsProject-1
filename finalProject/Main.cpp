@@ -25,10 +25,13 @@ int main(int argc, char** argv)
 	ConfigurationManager* cmManager = new ConfigurationManager(PARAMETER_FILE_PATH);
 
 	Map* mMap = new Map(cmManager->mapPath,
-						cmManager->mapResolutionCM);
+						cmManager->mapResolutionCM,
+						cmManager->gridResolutionCM);
 
 	mMap->MapBlowing(cmManager->robotSize->X,
 			cmManager->robotSize->Y);
+	mMap->CreateMatrix();
+
 
 	Robot* robot = Robot::getRobot();
 
