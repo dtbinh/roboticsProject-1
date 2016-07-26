@@ -67,7 +67,36 @@ void Map::WeightCell(int nRow, int nCol, double resolution) {
 }
 
 void Map::CreateMatrix() {
+	// Number of cells in the first array of the grid.
 	int nPixelInGrid = this->GetGridMapResolution();
+
+	// Grid size
+	int nGridHeight = this->height / nPixelInGrid;
+	int nGridWidth = this->width / nPixelInGrid;
+
+	this->vMapMatrix.resize(nGridHeight);
+
+	// Resize each cell in the vector
+	for (int i=0; i< this->vMapMatrix.size(); i++) {
+		this->vMapMatrix[i].resize(nGridWidth);
+	}
+
+	// According to the image set all the cells in the matrix to their types
+	for (int i =0; i<this->vMapMatrix.size();i++){
+		for (int j =0; j<this->vMapMatrix[0].size();i++){
+			// Check cell type insert it to matrix.
+			this->vMapMatrix[i][j] = (CELL)CheckCellInPng(i,j);
+
+		}
+	}
+}
+
+CELL Map::CheckCellInPng(int nRow, int nCol){
+	nRow *= this->GetGridMapResolution();
+	nCol *= this->GetGridMapResolution();
+
+	// If this counter is less than 16 so the
+	int nIsFreeCounter = 0;
 }
 
 double Map::GetGridMapResolution(){
