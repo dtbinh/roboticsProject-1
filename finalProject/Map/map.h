@@ -19,9 +19,12 @@ public:
 			double mapResolution);
 	vector<unsigned char> image; // Raw pixels
 	vector<unsigned char> imageAfterBlow;
-	unsigned width, height;
+	enum CELL 							{FREE, OCCUPIED};
+	std::vector< std::vector<CELL> > 	vMapMatrix;
+	unsigned int width, height;
 	double resolution;
 	void MapBlowing(double robotHeight, double robotWidth);
+	void WeightCell(int nRow, int nCol, double resolution);
 };
 
 #endif /* MAP_H_ */

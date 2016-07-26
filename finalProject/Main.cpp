@@ -27,7 +27,7 @@ int main(int argc, char** argv)
 	Map* mMap = new Map(cmManager->mapPath,
 						cmManager->mapResolutionCM);
 
-	mMap->MapResizing(cmManager->robotSize->X,
+	mMap->MapBlowing(cmManager->robotSize->X,
 			cmManager->robotSize->Y);
 
 	Robot* robot = Robot::getRobot();

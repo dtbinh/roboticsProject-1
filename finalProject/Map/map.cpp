@@ -28,13 +28,39 @@ void Map::MapBlowing(double robotHeight, double robotWidth) {
 	//	}
 
 	// Copy image to imageAfterBlow
-	this->imageAfterBlow = new vector<unsigned char>(this->image);
+	this->imageAfterBlow = vector<unsigned char>(this->image);
 
 	for (int nRow=0; nRow < this->height; nRow++){
 		for (int nCol=0; nCol < this->width; nCol++){
-
+			// If the cell is black we need to weight it.
+			if ((this->image[nRow * width * 4 + nCol * 4] == 0) &
+					(this->image[nRow * width * 4 + nCol * 4 + 1] == 0) &
+					(this->image[nRow *  width * 4 + nCol * 4 + 2] == 0))
+			{
+				this->WeightCell(nRow, nCol, this->resolution);
+			}
 		}
 	}
 
+}
+
+void Map::WeightCell(int nRow, int nCol, double resolution) {
+	for (int nRowWeighter = nRow - resolution; nRowWeighter < nRow + resolution; nRowWeighter++ ){
+		for (int nColWeighter = nCol - resolution;
+			 nColWeighter < nCol + resolution;
+			 nColWeighter++){
+
+			// Check to see that we are not exceeding the size of the image.
+			if (nRowWeighter >= 0 &
+					nColWeighter >= 0 &
+					nRowWeighter <= height * 4 &
+					nColWeighter <= width * 4){
+				this->imageAfterBlow[nRowWeighter * width * 4 + nColWeighter * 4] = 0;
+				this->imageAfterBlow[nRowWeighter * width * 4 + nColWeighter * 4 + 1] = 0;
+				this->imageAfterBlow[nRowWeighter * width * 4 + nColWeighter * 4 + 2] = 0;
+				this->imageAfterBlow[nRowWeighter * width * 4 + nColWeighter * 4 + 3] = 255;
+			}
+		}
+	}
 }
 
