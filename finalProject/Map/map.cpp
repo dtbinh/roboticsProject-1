@@ -39,7 +39,7 @@ void Map::MapBlowing(double robotHeight, double robotWidth) {
 					(this->image[nRow * width * 4 + nCol * 4 + 1] == 0) &
 					(this->image[nRow *  width * 4 + nCol * 4 + 2] == 0))
 			{
-				this->WeightCell(nRow, nCol, this->mapResolution);
+				this->WeightCell(nRow, nCol, robotHeight/2);
 			}
 		}
 	}
@@ -77,26 +77,44 @@ void Map::CreateMatrix() {
 	this->vMapMatrix.resize(nGridHeight);
 
 	// Resize each cell in the vector
-	for (int i=0; i< this->vMapMatrix.size(); i++) {
+	for (unsigned int i=0; i< this->vMapMatrix.size(); i++) {
 		this->vMapMatrix[i].resize(nGridWidth);
 	}
 
 	// According to the image set all the cells in the matrix to their types
-	for (int i =0; i<this->vMapMatrix.size();i++){
-		for (int j =0; j<this->vMapMatrix[0].size();i++){
+	for (unsigned int i =0; i<nGridHeight;i++){
+		for (unsigned int j =0; j<nGridWidth;j++){
 			// Check cell type insert it to matrix.
-			this->vMapMatrix[i][j] = (CELL)CheckCellInPng(i,j);
-
+			CELL cell = (CELL)CheckCellInPng(i,j);
+			this->vMapMatrix[i][j] = cell;
 		}
 	}
 }
 
-CELL Map::CheckCellInPng(int nRow, int nCol){
+int Map::ArrPosToMatrixPos(int nRow, int nCol) {
+	return (this->imageAfterBlow[nRow*width*4 +nCol*4]);
+}
+
+int Map::CheckCellInPng(int nRow, int nCol){
 	nRow *= this->GetGridMapResolution();
 	nCol *= this->GetGridMapResolution();
 
-	// If this counter is less than 16 so the
+	// If this counter is less than 16 so the cell is occupied.
 	int nIsFreeCounter = 0;
+
+	for (int nRowOffSet=0; nRowOffSet < this->GetGridMapResolution(); nRowOffSet++) {
+		for (int nColOffSet=0; nColOffSet < this->GetGridMapResolution(); nColOffSet++) {
+			if (ArrPosToMatrixPos(nRow + nRowOffSet,nCol +nColOffSet)==255){
+				nIsFreeCounter++;
+			}
+		}
+	}
+	// In case there is less than 16 free pixels the cell if occupied.
+	if (nIsFreeCounter<16) {
+		return OCCUPIED;
+	} else {
+		return FREE;
+	}
 }
 
 double Map::GetGridMapResolution(){

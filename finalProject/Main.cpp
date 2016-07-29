@@ -32,6 +32,8 @@ int main(int argc, char** argv)
 			cmManager->robotSize->Y);
 	mMap->CreateMatrix();
 
+	point target = calcTargetPoint(cmManager->goal,
+			mMap->GetGridMapResolution());
 
 	Robot* robot = Robot::getRobot();
 

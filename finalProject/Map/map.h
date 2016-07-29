@@ -20,7 +20,7 @@ public:
 			double gridResolution);
 	vector<unsigned char> image; // Raw pixels
 	vector<unsigned char> imageAfterBlow;
-	enum CELL 							{FREE, OCCUPIED};
+	enum CELL {FREE, OCCUPIED};
 	std::vector< std::vector<CELL> > 	vMapMatrix;
 	unsigned int width, height;
 	double mapResolution;
@@ -29,6 +29,8 @@ public:
 	void WeightCell(int nRow, int nCol, double resolution);
 	void CreateMatrix();
 	double GetGridMapResolution();
+	int ArrPosToMatrixPos(int nRow, int nCol);
+	int CheckCellInPng(int nRow, int nCol);
 };
 
 #endif /* MAP_H_ */
