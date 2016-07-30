@@ -41,6 +41,8 @@ int main(int argc, char** argv)
 	point pStart = mMap->calcPointInMap(tempPoint);
 
 	WaypointsManager* wayManager = new WaypointsManager(pStart,pTarget,mMap);
+	// TODO: Make the way straight line.
+	wayManager->printPathToPng();
 
 	Robot* robot = Robot::getRobot();
 

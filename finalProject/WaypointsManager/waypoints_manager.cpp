@@ -12,11 +12,40 @@
 
 WaypointsManager::WaypointsManager(point &pStart, point &pEnd,
 									Map *map){
-	this->lstAPath = this->CreateAPath(pStart,pEnd,map);
+	this->pStart = pStart;
+	this->pEnd = pEnd;
+	this->map = map;
+	this->lstAPath = this->CreateAPath();
 }
-std::list<Node*> WaypointsManager::CreateAPath(point pStart,
-											  point pEnd,
-											  Map *map){
+
+void WaypointsManager::printPathToPng() {
+	// Start location
+	this->map->imageAfterBlow[(this->pStart.X * 4 + this->pStart.Y * this->map->width * 4) + 0] = 255;
+	this->map->imageAfterBlow[(this->pStart.X * 4 + this->pStart.Y * this->map->width * 4) + 1] = 0;
+	this->map->imageAfterBlow[(this->pStart.X * 4 + this->pStart.Y * this->map->width * 4) + 2] = 0;
+	this->map->imageAfterBlow[(this->pStart.X * 4 + this->pStart.Y * this->map->width * 4) + 3] = 0.1;
+
+	// Goal location
+	this->map->imageAfterBlow[(this->pEnd.X * 4 + this->pEnd.Y * this->map->width * 4) + 0] = 0;
+	this->map->imageAfterBlow[(this->pEnd.X * 4 + this->pEnd.Y * this->map->width * 4) + 1] = 255;
+	this->map->imageAfterBlow[(this->pEnd.X * 4 + this->pEnd.Y * this->map->width * 4) + 2] = 0;
+	this->map->imageAfterBlow[(this->pEnd.X * 4 + this->pEnd.Y * this->map->width * 4) + 3] = 0.1;
+
+	// AStar
+	for (std::list<Node*>::iterator iterNode = this->lstAPath.begin(); iterNode != this->lstAPath.end(); iterNode++)
+	{
+		int nX = (*iterNode)->x * this->map->GetGridMapResolution();
+		int nY = (*iterNode)->y * this->map->GetGridMapResolution();
+		this->map->imageAfterBlow[(nX * 4 + nY * this->map->width * 4) + 0] = 0;
+		this->map->imageAfterBlow[(nX * 4 + nY * this->map->width * 4) + 1] = 255;
+		this->map->imageAfterBlow[(nX * 4 + nY * this->map->width * 4) + 2] = 0;
+		this->map->imageAfterBlow[(nX * 4 + nY * this->map->width * 4) + 3] = 0.1;
+	}
+
+	lodepng::encode("APath.png", this->map->imageAfterBlow, this->map->width, this->map->height);
+}
+
+std::list<Node*> WaypointsManager::CreateAPath(){
 	std::list<Node*> openList, closedList;
 	std::map<Node*, Node*> nSourceNodes;
 

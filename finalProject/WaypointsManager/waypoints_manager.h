@@ -15,11 +15,12 @@
 
 class WaypointsManager{
 private:
+	point pEnd,pStart;
+	Map *map;
 public:
 	WaypointsManager(point &pStart, point &pEnd, Map *map);
-	std::list<Node*> CreateAPath(point pStart,
-							    point pEnd,
-							    Map *map);
+	std::list<Node*> CreateAPath();
+	void printPathToPng();
 	std::list<Node*> lstAPath;
 };
 
