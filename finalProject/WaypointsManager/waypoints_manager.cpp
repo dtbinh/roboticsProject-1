@@ -12,11 +12,7 @@
 
 WaypointsManager::WaypointsManager(point &pStart, point &pEnd,
 									Map *map){
-	std::list<Node*> lstPath = this->CreateAPath(pStart,pEnd,map);
-	this->lstAPath = lstPath;
-	//this->lstAPath = this->CreateAPath(pStart,pEnd,map);
-
-
+	this->lstAPath = this->CreateAPath(pStart,pEnd,map);
 }
 std::list<Node*> WaypointsManager::CreateAPath(point pStart,
 											  point pEnd,
@@ -24,18 +20,14 @@ std::list<Node*> WaypointsManager::CreateAPath(point pStart,
 	std::list<Node*> openList, closedList;
 	std::map<Node*, Node*> nSourceNodes;
 
-	bool bStuck = map->IsCellFree(pStart);
-	bool bStuck2 = map->IsCellFree(pEnd);
-
 	Node *nStart = new Node(pStart.X,pStart.Y,NULL);
 	Node *nEnd = new Node(pEnd.X,pEnd.Y,NULL);
 	Node *nCurrent = new Node(-1, -1,NULL);
 
-	// Calculate
+	// Calculate node values.
 	nStart->calculateNode(nEnd);
 
 	openList.push_back(nStart);
-	//int nOpenListSize = openList.size();
 
 	while (!nCurrent->isEqual(nEnd)) {
 		// Search for the smallest F in the open list.
