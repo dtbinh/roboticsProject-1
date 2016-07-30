@@ -6,8 +6,11 @@
  */
 #include <libplayerc++/playerc++.h>
 #include "ConfigurationManager/configuration_manager.h"
+#include "WaypointsManager/waypoints_manager.h"
 #include "Robot/robot.h"
 #include "Map/map.h"
+#include "Utils/structs.h"
+
 using namespace PlayerCc;
 using namespace std;
 
@@ -32,8 +35,12 @@ int main(int argc, char** argv)
 			cmManager->robotSize->Y);
 	mMap->CreateMatrix();
 
-	point target = calcTargetPoint(cmManager->goal,
-			mMap->GetGridMapResolution());
+	point pTarget = mMap->calcPointInMap(*cmManager->goal);
+	point tempPoint = {cmManager->startLocation->X,
+						cmManager->startLocation->Y};
+	point pStart = mMap->calcPointInMap(tempPoint);
+
+	WaypointsManager* wayManager = new WaypointsManager(pStart,pTarget,mMap);
 
 	Robot* robot = Robot::getRobot();
 

@@ -4,12 +4,15 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../WaypointsManager/node.cpp \
 ../WaypointsManager/waypoints_manager.cpp 
 
 OBJS += \
+./WaypointsManager/node.o \
 ./WaypointsManager/waypoints_manager.o 
 
 CPP_DEPS += \
+./WaypointsManager/node.d \
 ./WaypointsManager/waypoints_manager.d 
 
 

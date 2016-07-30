@@ -24,11 +24,6 @@ Map::Map (const char* file_path, double mapResolution, double gridResolution) {
 }
 
 void Map::MapBlowing(double robotHeight, double robotWidth) {
-	//this->imageAfterBlow.resize(this->image.size());
-	//	for (int i=0;i<this->image.size(); i++){
-	//			this->imageAfterBlow[i] = this->image[i];
-	//	}
-
 	// Copy image to imageAfterBlow
 	this->imageAfterBlow = vector<unsigned char>(this->image);
 
@@ -121,3 +116,15 @@ double Map::GetGridMapResolution(){
 	return (this->gridResolution/ this->mapResolution);
 }
 
+point Map::calcPointInMap(point p){
+	point result = {(int)(p.X/this->GetGridMapResolution()),
+				    (int)(p.Y/this->GetGridMapResolution())};
+	return result;
+}
+
+bool Map::IsCellFree(point p){
+	if (this->vMapMatrix[p.Y][p.X] == OCCUPIED) {
+		return false;
+	}
+	return true;
+}

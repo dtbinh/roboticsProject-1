@@ -9,6 +9,7 @@
 #define MAP_H_
 #include <string>
 #include "../Utils/lodepng.h"
+#include "../Utils/structs.h"
 #include <iostream>
 using namespace std;
 
@@ -31,6 +32,8 @@ public:
 	double GetGridMapResolution();
 	int ArrPosToMatrixPos(int nRow, int nCol);
 	int CheckCellInPng(int nRow, int nCol);
+	point calcPointInMap(point p);
+	bool IsCellFree(point p);
 };
 
 #endif /* MAP_H_ */
