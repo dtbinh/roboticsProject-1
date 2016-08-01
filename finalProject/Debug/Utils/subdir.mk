@@ -6,16 +6,19 @@
 CPP_SRCS += \
 ../Utils/Converter.cpp \
 ../Utils/lodepng.cpp \
+../Utils/position.cpp \
 ../Utils/structs.cpp 
 
 OBJS += \
 ./Utils/Converter.o \
 ./Utils/lodepng.o \
+./Utils/position.o \
 ./Utils/structs.o 
 
 CPP_DEPS += \
 ./Utils/Converter.d \
 ./Utils/lodepng.d \
+./Utils/position.d \
 ./Utils/structs.d 
 
 

@@ -18,7 +18,47 @@ WaypointsManager::WaypointsManager(point &pStart, point &pEnd,
 	this->lstAPath = this->CreateAPath();
 }
 
-void WaypointsManager::printPathToPng() {
+void WaypointsManager::RemoveUnnecessaryWayPoints(
+										unsigned dwResolution,
+										float fLinearAccuracy) {
+	// Starting node is always a new way point...
+	Node* before_node = lstAPath.front();
+	lstWayPointPath.push_back(before_node);
+	float fBeforeGradient=0;
+
+	for (std::list<Node*>::iterator iterNode = this->lstAPath.begin();
+		 iterNode != this->lstAPath.end();
+		 iterNode++)
+		{
+		float fCurrentGradient = getGradientBtwNodes(before_node,*iterNode);
+
+		// The last node is always in the way point.
+		if (*iterNode == *lstAPath.end()){
+			lstWayPointPath.push_back(*lstAPath.end());
+		}
+		else if (fCurrentGradient != fBeforeGradient &&
+				abs(fCurrentGradient - fBeforeGradient) >= fLinearAccuracy){
+			lstWayPointPath.push_back(*iterNode);
+			before_node=*iterNode;
+			fBeforeGradient = fCurrentGradient;
+		}
+	}
+}
+
+float WaypointsManager::getGradientBtwNodes(Node* node1, Node* node2){
+	Location to,from;
+
+	from.X = node1->x;
+	from.Y = node1->y;
+	to.X = node2->x;
+	to.Y = node2->y;
+
+	// Initial lookup values
+	float f= CalcGradient(from, to);
+	return f;
+}
+
+void WaypointsManager::printPathToPng(string picName, std::list<Node*> lstPath) {
 	// Start location
 	this->map->imageAfterBlow[(this->pStart.X * 4 + this->pStart.Y * this->map->width * 4) + 0] = 255;
 	this->map->imageAfterBlow[(this->pStart.X * 4 + this->pStart.Y * this->map->width * 4) + 1] = 0;
@@ -32,7 +72,7 @@ void WaypointsManager::printPathToPng() {
 	this->map->imageAfterBlow[(this->pEnd.X * 4 + this->pEnd.Y * this->map->width * 4) + 3] = 0.1;
 
 	// AStar
-	for (std::list<Node*>::iterator iterNode = this->lstAPath.begin(); iterNode != this->lstAPath.end(); iterNode++)
+	for (std::list<Node*>::iterator iterNode = lstPath.begin(); iterNode != lstPath.end(); iterNode++)
 	{
 		int nX = (*iterNode)->x * this->map->GetGridMapResolution();
 		int nY = (*iterNode)->y * this->map->GetGridMapResolution();
@@ -42,7 +82,7 @@ void WaypointsManager::printPathToPng() {
 		this->map->imageAfterBlow[(nX * 4 + nY * this->map->width * 4) + 3] = 0.1;
 	}
 
-	lodepng::encode("APath.png", this->map->imageAfterBlow, this->map->width, this->map->height);
+	lodepng::encode(picName, this->map->imageAfterBlow, this->map->width, this->map->height);
 }
 
 std::list<Node*> WaypointsManager::CreateAPath(){

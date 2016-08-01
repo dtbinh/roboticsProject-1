@@ -18,7 +18,8 @@ Main.d Main.o: ../Main.cpp \
   ../WaypointsManager/../Map/map.h \
   ../WaypointsManager/../Map/../Utils/lodepng.h \
   ../WaypointsManager/../Map/../Utils/structs.h \
-  ../WaypointsManager/node.h ../Robot/robot.h \
+  ../WaypointsManager/node.h ../WaypointsManager/../Utils/position.h \
+  ../WaypointsManager/../Utils/structs.h ../Robot/robot.h \
   ../Robot/../Utils/Converter.h ../Map/map.h ../Utils/structs.h
 
 /usr/local/include/player-2.0/libplayerc++/playerc++.h:
@@ -60,6 +61,10 @@ Main.d Main.o: ../Main.cpp \
 ../WaypointsManager/../Map/../Utils/structs.h:
 
 ../WaypointsManager/node.h:
+
+../WaypointsManager/../Utils/position.h:
+
+../WaypointsManager/../Utils/structs.h:
 
 ../Robot/robot.h:
 

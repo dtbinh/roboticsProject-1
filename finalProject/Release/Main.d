@@ -1,17 +1,31 @@
-Main.d Main.o: ../Main.cpp ../Map/Map.h ../Map/../Utils/lodepng.h \
-  ../Way/AStar.h ../Way/Node.h ../Way/../Map/Map.h \
-  ../Utils/ParametersFile.h ../Utils/Utils.h
+Main.d Main.o: ../Main.cpp \
+  ../ConfigurationManager/configuration_manager.h \
+  ../ConfigurationManager/../Utils/structs.h \
+  ../WaypointsManager/waypoints_manager.h \
+  ../WaypointsManager/../Map/map.h \
+  ../WaypointsManager/../Map/../Utils/lodepng.h \
+  ../WaypointsManager/../Map/../Utils/structs.h \
+  ../WaypointsManager/node.h ../Robot/robot.h \
+  ../Robot/../Utils/Converter.h ../Map/map.h ../Utils/structs.h
 
-../Map/Map.h:
+../ConfigurationManager/configuration_manager.h:
 
-../Map/../Utils/lodepng.h:
+../ConfigurationManager/../Utils/structs.h:
 
-../Way/AStar.h:
+../WaypointsManager/waypoints_manager.h:
 
-../Way/Node.h:
+../WaypointsManager/../Map/map.h:
 
-../Way/../Map/Map.h:
+../WaypointsManager/../Map/../Utils/lodepng.h:
 
-../Utils/ParametersFile.h:
+../WaypointsManager/../Map/../Utils/structs.h:
 
-../Utils/Utils.h:
+../WaypointsManager/node.h:
+
+../Robot/robot.h:
+
+../Robot/../Utils/Converter.h:
+
+../Map/map.h:
+
+../Utils/structs.h:

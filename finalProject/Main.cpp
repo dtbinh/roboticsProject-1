@@ -20,6 +20,8 @@ using namespace std;
 #define MAX_ANGLE_FOR_AVOIDANCE 45
 #define MAX_DIST_TO_OBSTACLE 0.6
 #define MAX_DIST_OF_LASER_SENSOR 4
+#define DEFAULT_WAYPOINT_RESOLUTION 13
+#define DEFAULT_WAYPOINT_ACCURACY (0.1)
 
 char *PARAMETER_FILE_PATH = "/home/user/Desktop/parameters.txt";
 
@@ -42,8 +44,10 @@ int main(int argc, char** argv)
 
 	WaypointsManager* wayManager = new WaypointsManager(pStart,pTarget,mMap);
 	// TODO: Make the way straight line.
-	wayManager->printPathToPng();
-
+	wayManager->printPathToPng("APath.png",wayManager->lstAPath);
+	wayManager->RemoveUnnecessaryWayPoints(DEFAULT_WAYPOINT_RESOLUTION,
+										   DEFAULT_WAYPOINT_ACCURACY);
+	wayManager->printPathToPng("WayPoints.png",wayManager->lstWayPointPath);
 	Robot* robot = Robot::getRobot();
 
 	robot->setSpeed(1,0);

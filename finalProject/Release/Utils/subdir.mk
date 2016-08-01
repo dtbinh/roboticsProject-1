@@ -4,19 +4,19 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../Utils/ParametersFile.cpp \
-../Utils/Utils.cpp \
-../Utils/lodepng.cpp 
+../Utils/Converter.cpp \
+../Utils/lodepng.cpp \
+../Utils/structs.cpp 
 
 OBJS += \
-./Utils/ParametersFile.o \
-./Utils/Utils.o \
-./Utils/lodepng.o 
+./Utils/Converter.o \
+./Utils/lodepng.o \
+./Utils/structs.o 
 
 CPP_DEPS += \
-./Utils/ParametersFile.d \
-./Utils/Utils.d \
-./Utils/lodepng.d 
+./Utils/Converter.d \
+./Utils/lodepng.d \
+./Utils/structs.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
