@@ -15,7 +15,7 @@ Robot::Robot()
 	bool bMotor = true;
 	_PlayerClient = new PlayerClient(ip, port);
 	_PositionProxy = new Position2dProxy(_PlayerClient);
-	_LaserProxy = new LaserProxy(_PlayerClient);
+	_laserProxy = new LaserProxy(_PlayerClient);
 	_PositionProxy->SetMotorEnable(bMotor);
 	_PlayerClient->Read();
 	_PositionProxy->SetOdometry(startPoseX,startPoseY,startPoseYaw);
@@ -32,7 +32,7 @@ Robot::~Robot()
 {
 	delete _PlayerClient;
 	delete _PositionProxy;
-	delete _LaserProxy;
+	delete _laserProxy;
 }
 
 double Robot::getX()
@@ -57,6 +57,10 @@ double Robot::getYaw()
 void Robot::setSpeed(double speed, double angularSpeed)
 {
 	_PositionProxy->SetSpeed(speed,angularSpeed);
+}
+
+float Robot::getLaserScan(int index) {
+	return _laserProxy->GetRange(index);
 }
 
 /*void Robot::setDirection(double Yaw)

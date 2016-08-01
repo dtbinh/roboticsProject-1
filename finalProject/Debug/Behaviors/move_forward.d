@@ -1,4 +1,6 @@
-Main.d Main.o: ../Main.cpp \
+Behaviors/move_forward.d Behaviors/move_forward.o:  \
+ ../Behaviors/move_forward.cpp ../Behaviors/move_forward.h \
+  ../Behaviors/behavior.h ../Behaviors/../Robot/robot.h \
   /usr/local/include/player-2.0/libplayerc++/playerc++.h \
   /usr/local/include/player-2.0/libplayerc/playerc.h \
   /usr/local/include/player-2.0/libplayercore/player.h \
@@ -12,20 +14,14 @@ Main.d Main.o: ../Main.cpp \
   /usr/local/include/player-2.0/libplayerc++/playerclient.h \
   /usr/local/include/player-2.0/libplayerc++/playererror.h \
   /usr/local/include/player-2.0/libplayerc++/clientproxy.h \
-  ../ConfigurationManager/configuration_manager.h \
-  ../ConfigurationManager/../Utils/structs.h \
-  ../WaypointsManager/waypoints_manager.h \
-  ../WaypointsManager/../Map/map.h \
-  ../WaypointsManager/../Map/../Utils/lodepng.h \
-  ../WaypointsManager/../Map/../Utils/structs.h \
-  ../WaypointsManager/node.h ../WaypointsManager/../Utils/position.h \
-  ../WaypointsManager/../Utils/structs.h ../Robot/robot.h \
-  ../Robot/../Utils/Converter.h ../Map/map.h ../Utils/structs.h \
-  ../Behaviors/behavior.h ../Behaviors/../Robot/robot.h \
-  ../Behaviors/../Utils/Converter.h ../Behaviors/move_to_way_point.h \
-  ../Behaviors/behavior.h ../Behaviors/../WaypointsManager/node.h \
-  ../Behaviors/turn_left.h ../Behaviors/turn_right.h \
-  ../Behaviors/move_forward.h
+  ../Behaviors/../Robot/../Utils/Converter.h \
+  ../Behaviors/../Utils/Converter.h
+
+../Behaviors/move_forward.h:
+
+../Behaviors/behavior.h:
+
+../Behaviors/../Robot/robot.h:
 
 /usr/local/include/player-2.0/libplayerc++/playerc++.h:
 
@@ -53,46 +49,6 @@ Main.d Main.o: ../Main.cpp \
 
 /usr/local/include/player-2.0/libplayerc++/clientproxy.h:
 
-../ConfigurationManager/configuration_manager.h:
-
-../ConfigurationManager/../Utils/structs.h:
-
-../WaypointsManager/waypoints_manager.h:
-
-../WaypointsManager/../Map/map.h:
-
-../WaypointsManager/../Map/../Utils/lodepng.h:
-
-../WaypointsManager/../Map/../Utils/structs.h:
-
-../WaypointsManager/node.h:
-
-../WaypointsManager/../Utils/position.h:
-
-../WaypointsManager/../Utils/structs.h:
-
-../Robot/robot.h:
-
-../Robot/../Utils/Converter.h:
-
-../Map/map.h:
-
-../Utils/structs.h:
-
-../Behaviors/behavior.h:
-
-../Behaviors/../Robot/robot.h:
+../Behaviors/../Robot/../Utils/Converter.h:
 
 ../Behaviors/../Utils/Converter.h:
-
-../Behaviors/move_to_way_point.h:
-
-../Behaviors/behavior.h:
-
-../Behaviors/../WaypointsManager/node.h:
-
-../Behaviors/turn_left.h:
-
-../Behaviors/turn_right.h:
-
-../Behaviors/move_forward.h:

@@ -14,3 +14,8 @@ double DegreeToRadian(double degree) {
 double RadianToDegree(double radian){
 	return ((radian) * (180.0/PI));
 }
+
+int DegreesToIndex(int degrees){
+	int index = degrees * DEGREES_INDEX_RATIO;
+	return MIDDLE_INDEX + index;
+}

@@ -17,6 +17,7 @@ RM := rm -rf
 -include Map/subdir.mk
 -include LocalizationManager/subdir.mk
 -include ConfigurationManager/subdir.mk
+-include Behaviors/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)

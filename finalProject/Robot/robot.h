@@ -21,7 +21,7 @@ class Robot {
 private:
 	PlayerClient* _PlayerClient;
 	Position2dProxy* _PositionProxy;
-	LaserProxy* _LaserProxy;
+	LaserProxy* _laserProxy;
 	double X;
 	double Y;
 	double Yaw;
@@ -46,6 +46,7 @@ public:
 	double getYaw();
 	void setSpeed(double speed, double angularSpeed);
 	void Read();
+	float getLaserScan(int index);
 	//void setDirection(double Yaw);
 
 
