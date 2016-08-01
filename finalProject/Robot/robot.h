@@ -11,7 +11,7 @@
 #include <libplayerc++/playerc++.h>
 #include "../Utils/Converter.h"
 #include <vector>
-
+#include "../WaypointsManager/node.h"
 
 using namespace std;
 using namespace PlayerCc;
@@ -39,7 +39,9 @@ public:
 	double robotWidth;
 	double robotHeight;
 	~Robot();
-//	static Robot* getRobot(char* ip, int port, bool bMotor);
+	void setOdometry();
+	void setOdometry(int x, int y, double yaw);
+	void update();
 	static Robot* getRobot();
 	double getX();
 	double getY();
@@ -47,9 +49,7 @@ public:
 	void setSpeed(double speed, double angularSpeed);
 	void Read();
 	float getLaserScan(int index);
-	//void setDirection(double Yaw);
-
-
+	bool isInWaypointRange(Node* nWaypoint, double girdResolution);
 };
 
 #endif /* ROBOT_H_ */

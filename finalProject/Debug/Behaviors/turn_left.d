@@ -15,6 +15,7 @@ Behaviors/turn_left.d Behaviors/turn_left.o: ../Behaviors/turn_left.cpp \
   /usr/local/include/player-2.0/libplayerc++/playererror.h \
   /usr/local/include/player-2.0/libplayerc++/clientproxy.h \
   ../Behaviors/../Robot/../Utils/Converter.h \
+  ../Behaviors/../Robot/../WaypointsManager/node.h \
   ../Behaviors/../Utils/Converter.h
 
 ../Behaviors/turn_left.h:
@@ -50,5 +51,7 @@ Behaviors/turn_left.d Behaviors/turn_left.o: ../Behaviors/turn_left.cpp \
 /usr/local/include/player-2.0/libplayerc++/clientproxy.h:
 
 ../Behaviors/../Robot/../Utils/Converter.h:
+
+../Behaviors/../Robot/../WaypointsManager/node.h:
 
 ../Behaviors/../Utils/Converter.h:

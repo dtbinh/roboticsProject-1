@@ -15,6 +15,7 @@ Behaviors/move_to_way_point.d Behaviors/move_to_way_point.o:  \
   /usr/local/include/player-2.0/libplayerc++/playererror.h \
   /usr/local/include/player-2.0/libplayerc++/clientproxy.h \
   ../Behaviors/../Robot/../Utils/Converter.h \
+  ../Behaviors/../Robot/../WaypointsManager/node.h \
   ../Behaviors/../Utils/Converter.h \
   ../Behaviors/../WaypointsManager/node.h
 
@@ -51,6 +52,8 @@ Behaviors/move_to_way_point.d Behaviors/move_to_way_point.o:  \
 /usr/local/include/player-2.0/libplayerc++/clientproxy.h:
 
 ../Behaviors/../Robot/../Utils/Converter.h:
+
+../Behaviors/../Robot/../WaypointsManager/node.h:
 
 ../Behaviors/../Utils/Converter.h:
 

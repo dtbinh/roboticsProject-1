@@ -15,6 +15,7 @@ Behaviors/move_forward.d Behaviors/move_forward.o:  \
   /usr/local/include/player-2.0/libplayerc++/playererror.h \
   /usr/local/include/player-2.0/libplayerc++/clientproxy.h \
   ../Behaviors/../Robot/../Utils/Converter.h \
+  ../Behaviors/../Robot/../WaypointsManager/node.h \
   ../Behaviors/../Utils/Converter.h
 
 ../Behaviors/move_forward.h:
@@ -50,5 +51,7 @@ Behaviors/move_forward.d Behaviors/move_forward.o:  \
 /usr/local/include/player-2.0/libplayerc++/clientproxy.h:
 
 ../Behaviors/../Robot/../Utils/Converter.h:
+
+../Behaviors/../Robot/../WaypointsManager/node.h:
 
 ../Behaviors/../Utils/Converter.h:

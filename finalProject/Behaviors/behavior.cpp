@@ -27,6 +27,11 @@ Behavior* Behavior::selectNext() {
     return _nextBehaviors[nSideIndexShouldTernNow];
 }
 
+void Behavior::action()
+{
+
+}
+
 bool Behavior::stopCond(){
 	return true;
 }

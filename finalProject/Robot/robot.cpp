@@ -6,6 +6,8 @@
  */
 
 #include "robot.h"
+
+#define WAYPOINT_IN_RANGE_DISTANCE 0.1
 Robot* Robot::pRobot = NULL;
 
 Robot::Robot()
@@ -19,6 +21,22 @@ Robot::Robot()
 	_PositionProxy->SetMotorEnable(bMotor);
 	_PlayerClient->Read();
 	_PositionProxy->SetOdometry(startPoseX,startPoseY,startPoseYaw);
+}
+
+void Robot::setOdometry(){
+	_PositionProxy->SetOdometry(0,0,startYaw);
+}
+
+//void Robot::setOdometry(int x, int y, double yaw){
+//	int newX = PixelToMeter(x - startPoseX);
+//	int newY = PixelToMeter(y - startPoseY);
+//	double radianYaw = DegreeToRadian(yaw);
+//	_PositionProxy->SetOdometry(newX, newY,radianYaw);
+//}
+
+void Robot::update(){
+	this->Read();
+	this->setOdometry();
 }
 
 Robot* Robot::getRobot()
@@ -63,10 +81,13 @@ float Robot::getLaserScan(int index) {
 	return _laserProxy->GetRange(index);
 }
 
-/*void Robot::setDirection(double Yaw)
+
+
+bool Robot::isInWaypointRange(Node* nWaypoint, double girdResolution)
 {
-	_PositionProxy->get
-}*/
+	return ((abs((this->getX() / girdResolution) - nWaypoint->x) < WAYPOINT_IN_RANGE_DISTANCE) &&
+			(abs((this->getY() / girdResolution) - nWaypoint->y) < WAYPOINT_IN_RANGE_DISTANCE));
+}
 
 void Robot::Read()
 {

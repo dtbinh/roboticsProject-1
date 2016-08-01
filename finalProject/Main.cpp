@@ -11,10 +11,8 @@
 #include "Map/map.h"
 #include "Utils/structs.h"
 #include "Behaviors/behavior.h"
-#include "Behaviors/move_to_way_point.h"
-#include "Behaviors/turn_left.h"
-#include "Behaviors/turn_right.h"
-#include "Behaviors/move_forward.h"
+#include "Utils/general.h"
+
 
 using namespace PlayerCc;
 using namespace std;
@@ -56,26 +54,13 @@ int main(int argc, char** argv)
 	Robot* robot = Robot::getRobot();
 
     // Creating behaviors
-    Behavior** behaviors = new Behavior*[4];
-    behaviors[0] = new MoveToWaypoint(robot);
-    behaviors[1] = new MoveForward(robot);
-    behaviors[2] = new TurnRight(robot);
-    behaviors[3] = new TurnLeft(robot);
-    // Connecting behaviors
-    behaviors[0]->addNext(behaviors[2]);
-    behaviors[0]->addNext(behaviors[3]);
-    behaviors[1]->addNext(behaviors[2]);
-    behaviors[1]->addNext(behaviors[3]);
-    behaviors[2]->addNext(behaviors[0]);
-    behaviors[3]->addNext(behaviors[0]);
+	Behavior** behaviors = createBehaviors(robot);
 
-	robot->setSpeed(1,0);
-	while(true)
-	{
-		robot->Read();
-		//robot->setSpeed(1,0);
-	}
+	robot->update();
 
+	run_robot(robot, wayManager->lstWayPointPath,
+			behaviors, mMap,
+			pStart, pTarget);
 }
 
 

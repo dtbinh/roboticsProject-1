@@ -12,7 +12,7 @@ Robot/robot.d Robot/robot.o: ../Robot/robot.cpp ../Robot/robot.h \
   /usr/local/include/player-2.0/libplayerc++/playerclient.h \
   /usr/local/include/player-2.0/libplayerc++/playererror.h \
   /usr/local/include/player-2.0/libplayerc++/clientproxy.h \
-  ../Robot/../Utils/Converter.h
+  ../Robot/../Utils/Converter.h ../Robot/../WaypointsManager/node.h
 
 ../Robot/robot.h:
 
@@ -43,3 +43,5 @@ Robot/robot.d Robot/robot.o: ../Robot/robot.cpp ../Robot/robot.h \
 /usr/local/include/player-2.0/libplayerc++/clientproxy.h:
 
 ../Robot/../Utils/Converter.h:
+
+../Robot/../WaypointsManager/node.h:

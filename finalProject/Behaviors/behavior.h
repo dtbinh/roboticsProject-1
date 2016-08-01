@@ -27,6 +27,7 @@ public:
 
     Behavior *addNext(Behavior *behave);
     Behavior *selectNext();
+    void action();
 
 	bool checkObstacleInFront(int nCheckDirectionIndicator);
 	int nSideIndexShouldTernNow;

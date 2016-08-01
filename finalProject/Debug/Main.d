@@ -20,12 +20,16 @@ Main.d Main.o: ../Main.cpp \
   ../WaypointsManager/../Map/../Utils/structs.h \
   ../WaypointsManager/node.h ../WaypointsManager/../Utils/position.h \
   ../WaypointsManager/../Utils/structs.h ../Robot/robot.h \
-  ../Robot/../Utils/Converter.h ../Map/map.h ../Utils/structs.h \
-  ../Behaviors/behavior.h ../Behaviors/../Robot/robot.h \
-  ../Behaviors/../Utils/Converter.h ../Behaviors/move_to_way_point.h \
-  ../Behaviors/behavior.h ../Behaviors/../WaypointsManager/node.h \
-  ../Behaviors/turn_left.h ../Behaviors/turn_right.h \
-  ../Behaviors/move_forward.h
+  ../Robot/../Utils/Converter.h ../Robot/../WaypointsManager/node.h \
+  ../Map/map.h ../Utils/structs.h ../Behaviors/behavior.h \
+  ../Behaviors/../Robot/robot.h ../Behaviors/../Utils/Converter.h \
+  ../Utils/general.h ../Utils/../Behaviors/move_to_way_point.h \
+  ../Utils/../Behaviors/behavior.h \
+  ../Utils/../Behaviors/../WaypointsManager/node.h \
+  ../Utils/../Behaviors/turn_left.h ../Utils/../Behaviors/turn_right.h \
+  ../Utils/../Behaviors/move_forward.h ../Utils/../Behaviors/behavior.h \
+  ../Utils/../Robot/robot.h ../Utils/../Utils/structs.h \
+  ../Utils/../Map/map.h
 
 /usr/local/include/player-2.0/libplayerc++/playerc++.h:
 
@@ -75,6 +79,8 @@ Main.d Main.o: ../Main.cpp \
 
 ../Robot/../Utils/Converter.h:
 
+../Robot/../WaypointsManager/node.h:
+
 ../Map/map.h:
 
 ../Utils/structs.h:
@@ -85,14 +91,24 @@ Main.d Main.o: ../Main.cpp \
 
 ../Behaviors/../Utils/Converter.h:
 
-../Behaviors/move_to_way_point.h:
+../Utils/general.h:
 
-../Behaviors/behavior.h:
+../Utils/../Behaviors/move_to_way_point.h:
 
-../Behaviors/../WaypointsManager/node.h:
+../Utils/../Behaviors/behavior.h:
 
-../Behaviors/turn_left.h:
+../Utils/../Behaviors/../WaypointsManager/node.h:
 
-../Behaviors/turn_right.h:
+../Utils/../Behaviors/turn_left.h:
 
-../Behaviors/move_forward.h:
+../Utils/../Behaviors/turn_right.h:
+
+../Utils/../Behaviors/move_forward.h:
+
+../Utils/../Behaviors/behavior.h:
+
+../Utils/../Robot/robot.h:
+
+../Utils/../Utils/structs.h:
+
+../Utils/../Map/map.h:
