@@ -23,11 +23,10 @@ public:
     Behavior(Robot* robot);
     virtual bool startCond() = 0;
     virtual bool stopCond() = 0;
-    // virtual void action() = 0;
+    virtual void action() = 0;
 
-    Behavior *addNext(Behavior *behave);
+    Behavior *addNext(Behavior *beh);
     Behavior *selectNext();
-    void action();
 
 	bool checkObstacleInFront(int nCheckDirectionIndicator);
 	int nSideIndexShouldTernNow;

@@ -12,6 +12,13 @@
 #include "Utils/structs.h"
 #include "Behaviors/behavior.h"
 #include "Utils/general.h"
+#include "Behaviors/move_to_way_point.h"
+#include "Behaviors/turn_left.h"
+#include "Behaviors/turn_right.h"
+#include "Behaviors/move_forward.h"
+#include "Behaviors/behavior.h"
+#include "Robot/robot.h"
+#include "Map/map.h"
 
 
 using namespace PlayerCc;
@@ -53,14 +60,61 @@ int main(int argc, char** argv)
 	wayManager->printPathToPng("WayPoints.png",wayManager->lstWayPointPath);
 	Robot* robot = Robot::getRobot();
 
-    // Creating behaviors
-	Behavior** behaviors = createBehaviors(robot);
+//    // Creating behaviors
+//	Behavior** behaviors = createBehaviors(robot);
+//
+//	robot->update();
+//
+//	run_robot(robot, wayManager->lstAPath,
+//			  behaviors, mMap,
+//			  pStart, pTarget);
 
-	robot->update();
+    	// Creating behaviors
+	    Behavior** behaviors = new Behavior*[4];
+	    behaviors[0] = new MoveToWaypoint(robot);
+	    behaviors[1] = new MoveForward(robot);
+	    behaviors[2] = new TurnRight(robot);
+	    behaviors[3] = new TurnLeft(robot);
 
-	run_robot(robot, wayManager->lstWayPointPath,
-			behaviors, mMap,
-			pStart, pTarget);
+	    // Connecting behaviors
+	    behaviors[0]->addNext(behaviors[2]);
+	    behaviors[0]->addNext(behaviors[3]);
+	    behaviors[1]->addNext(behaviors[2]);
+	    behaviors[1]->addNext(behaviors[3]);
+	    behaviors[2]->addNext(behaviors[0]);
+	    behaviors[3]->addNext(behaviors[0]);
+
+	    Behavior *currBehavior = behaviors[0];
+
+		robot->update();
+
+	    for (std::list<Node*>::iterator iCurrWaypoint = wayManager->lstWayPointPath.begin();
+			 iCurrWaypoint != wayManager->lstWayPointPath.end();
+			 iCurrWaypoint++)
+	    {
+	    	// PrintToConsole(nStartX,nStartY,nWantedLocationX,nWantedLocationY);
+	    	((MoveToWaypoint*)behaviors[0])->setNextWaypoint(*iCurrWaypoint);
+
+	    	robot->update();
+
+	    	// while waypoint is not in range
+//	    	while (!robot->isInWaypointRange(*iCurrWaypoint,mMap->GetGridMapResolution()))
+//	    	{
+	    		// If curr behavior can be activated
+	    		if (currBehavior->startCond())
+	    		{
+	    			currBehavior->action();
+	    		}
+	    		else
+	    		{
+	    			currBehavior = currBehavior->selectNext();
+	    			cout << "   ...change behavior to " << currBehavior->strBehaviorName;
+	    		}
+
+	        	robot->update();
+	    	}
+//	    }
+
 }
 
 

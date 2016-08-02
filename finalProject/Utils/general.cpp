@@ -7,6 +7,9 @@
 #include "general.h"
 
 Behavior** createBehaviors(Robot* robot) {
+	// initialize behaviors
+	Behavior *turnToWayPoint;
+
 	Behavior** behaviors = new Behavior*[4];
 
     behaviors[0] = new MoveToWaypoint(robot);
@@ -38,19 +41,19 @@ void run_robot(Robot* robot, list<Node*> path, Behavior** behaviors,
 	    	robot->update();
 
 	    	// while waypoint is not in range
-	    	while (!robot->isInWaypointRange(*iCurrWaypoint,
-											 mMap->GetGridMapResolution()))
-	    	{
+//	    	while (!robot->isInWaypointRange(*iCurrWaypoint,
+//											 mMap->GetGridMapResolution()))
+//	    	{
 	    		// If curr behavior can be activated
 	    		if (currBehavior->startCond()) {
-	    			currBehavior->action();
+ 	    			currBehavior->action();
 	    		}
 	    		else {
 	    			currBehavior = currBehavior->selectNext();
 	    			cout << "   ...change behavior to " << currBehavior->strBehaviorName;
 	    		}
 	    		robot->update();
-	    	}
+//	    	}
 	    }
 }
 

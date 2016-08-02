@@ -29,7 +29,9 @@ Main.d Main.o: ../Main.cpp \
   ../Utils/../Behaviors/turn_left.h ../Utils/../Behaviors/turn_right.h \
   ../Utils/../Behaviors/move_forward.h ../Utils/../Behaviors/behavior.h \
   ../Utils/../Robot/robot.h ../Utils/../Utils/structs.h \
-  ../Utils/../Map/map.h
+  ../Utils/../Map/map.h ../Behaviors/move_to_way_point.h \
+  ../Behaviors/turn_left.h ../Behaviors/turn_right.h \
+  ../Behaviors/move_forward.h
 
 /usr/local/include/player-2.0/libplayerc++/playerc++.h:
 
@@ -112,3 +114,11 @@ Main.d Main.o: ../Main.cpp \
 ../Utils/../Utils/structs.h:
 
 ../Utils/../Map/map.h:
+
+../Behaviors/move_to_way_point.h:
+
+../Behaviors/turn_left.h:
+
+../Behaviors/turn_right.h:
+
+../Behaviors/move_forward.h:

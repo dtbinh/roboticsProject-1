@@ -17,14 +17,21 @@ Behavior::Behavior(Robot* robot)
 	nSideIndexShouldTernNow = 0;
 }
 
-Behavior* Behavior::addNext(Behavior *behave)
+
+Behavior* Behavior::addNext(Behavior *beh)
 {
-    _nextBehaviors.push_back(behave);
+    _nextBehaviors.push_back(beh);
     return this;
 }
 
-Behavior* Behavior::selectNext() {
+Behavior* Behavior::selectNext()
+{
     return _nextBehaviors[nSideIndexShouldTernNow];
+}
+
+bool Behavior::stopCond()
+{
+	return true;
 }
 
 void Behavior::action()
@@ -32,11 +39,8 @@ void Behavior::action()
 
 }
 
-bool Behavior::stopCond(){
-	return true;
-}
-
-bool Behavior::startCond() {
+bool Behavior::startCond()
+{
 	return true;
 }
 
