@@ -41,9 +41,9 @@ void run_robot(Robot* robot, list<Node*> path, Behavior** behaviors,
 	    	robot->update();
 
 	    	// while waypoint is not in range
-//	    	while (!robot->isInWaypointRange(*iCurrWaypoint,
-//											 mMap->GetGridMapResolution()))
-//	    	{
+	    	while (!robot->isInWaypointRange(*iCurrWaypoint,
+											 mMap->GetGridMapResolution()))
+	    	{
 	    		// If curr behavior can be activated
 	    		if (currBehavior->startCond()) {
  	    			currBehavior->action();
@@ -53,7 +53,7 @@ void run_robot(Robot* robot, list<Node*> path, Behavior** behaviors,
 	    			cout << "   ...change behavior to " << currBehavior->strBehaviorName;
 	    		}
 	    		robot->update();
-//	    	}
+	    	}
 	    }
 }
 
