@@ -1,15 +1,15 @@
 /*
  * Point.h
  *
- *  Created on: Jun 29, 2015
- *      Author: colman
+ *  Created on: Aug 1, 2016
+ *      Author: user
  */
 
 #ifndef POINT_H_
 #define POINT_H_
 
 #include <cmath>
-#include "../Location.h"
+#include "../Utils/Location.h"
 #include <cstddef>
 
 class Point {

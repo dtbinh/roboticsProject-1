@@ -1,3 +1,9 @@
+/*
+ * TurnRight.cpp
+ *
+*  Created on: Aug 1, 2016
+ *      Author: user
+ */
 #include "TurnRight.h"
 
 bool TurnRight::startCond()
@@ -17,7 +23,12 @@ bool TurnRight::startCond()
 
 void TurnRight::action()
 {
-	_robot->setSpeed(0.0,-ROTATION_SPEED);
+//	_robot->setSpeed(0.0,-ROTATION_SPEED);
+	while (this->startCond())
+	{
+		_robot->setSpeed(0.0, ROTATION_SPEED);
+		_robot->Read();
+	}
 }
 
 double TurnRight::getPriority()

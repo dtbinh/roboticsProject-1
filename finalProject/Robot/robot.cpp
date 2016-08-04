@@ -15,9 +15,9 @@ Robot::Robot()
 	char* ip = "localhost";
 	int port = 6665;
 	bool bMotor = true;
-	_PlayerClient = new PlayerClient(ip, port);
-	_PositionProxy = new Position2dProxy(_PlayerClient);
-	_laserProxy = new LaserProxy(_PlayerClient);
+	_PlayerClient = new PlayerCc::PlayerClient(ip, port);
+	_PositionProxy = new PlayerCc::Position2dProxy(_PlayerClient);
+	_laserProxy = new PlayerCc::LaserProxy(_PlayerClient);
 	_PositionProxy->SetMotorEnable(bMotor);
 	_PlayerClient->Read();
 	_PositionProxy->SetOdometry(startPoseX,startPoseY,startPoseYaw);

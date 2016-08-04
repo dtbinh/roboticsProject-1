@@ -32,4 +32,5 @@ Map \
 . \
 LocalizationManager \
 ConfigurationManager \
+Behaviors \
 

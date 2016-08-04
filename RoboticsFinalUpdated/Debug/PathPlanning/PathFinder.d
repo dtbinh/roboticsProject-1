@@ -1,22 +1,23 @@
 PathPlanning/PathFinder.d PathPlanning/PathFinder.o:  \
  ../PathPlanning/PathFinder.cpp ../PathPlanning/PathFinder.h \
-  ../PathPlanning/Point.h ../PathPlanning/../Location.h \
-  ../PathPlanning/../Position.h ../PathPlanning/../Matrix.h \
-  ../PathPlanning/../Utils.h ../PathPlanning/../ConfigurationManager.h \
-  ../PathPlanning/../PathPlanning/Point.h
+  ../PathPlanning/Point.h ../PathPlanning/../Utils/Location.h \
+  ../PathPlanning/../Utils/Position.h ../PathPlanning/../Map/Matrix.h \
+  ../PathPlanning/../Map/../Utils/Utils.h \
+  ../PathPlanning/../Map/../Utils/../Managers/ConfigurationManager.h \
+  ../PathPlanning/../Map/../PathPlanning/Point.h
 
 ../PathPlanning/PathFinder.h:
 
 ../PathPlanning/Point.h:
 
-../PathPlanning/../Location.h:
+../PathPlanning/../Utils/Location.h:
 
-../PathPlanning/../Position.h:
+../PathPlanning/../Utils/Position.h:
 
-../PathPlanning/../Matrix.h:
+../PathPlanning/../Map/Matrix.h:
 
-../PathPlanning/../Utils.h:
+../PathPlanning/../Map/../Utils/Utils.h:
 
-../PathPlanning/../ConfigurationManager.h:
+../PathPlanning/../Map/../Utils/../Managers/ConfigurationManager.h:
 
-../PathPlanning/../PathPlanning/Point.h:
+../PathPlanning/../Map/../PathPlanning/Point.h:

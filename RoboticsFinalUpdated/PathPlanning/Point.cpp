@@ -1,8 +1,8 @@
 /*
  * Point.cpp
  *
- *  Created on: Jun 29, 2015
- *      Author: Or Shainberg & Ori Damari
+ *  Created on: Aug 1, 2016
+ *      Author: user
  */
 
 #include "Point.h"

@@ -1,8 +1,8 @@
 /*
  * WaypointsManager.h
  *
- *  Created on: Jun 23, 2015
- *      Author: colman
+ *  Created on: Aug 1, 2016
+ *      Author: user
  */
 
 #ifndef WAYPOINTSMANAGER_H_
@@ -12,9 +12,9 @@
 #include <iostream>
 #include <algorithm>
 #include "Point.h"
-#include "../Position.h"
-#include "../Utils.h"
-#include "../Map.h"
+#include "../Utils/Position.h"
+#include "../Utils/Utils.h"
+#include "../Map/Map.h"
 
 class WaypointsManager {
 private:

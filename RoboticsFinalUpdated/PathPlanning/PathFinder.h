@@ -1,8 +1,8 @@
 /*
  * PathFinder.h
  *
- *  Created on: Jun 29, 2015
- *      Author: colman
+ *  Created on: Aug 1, 2016
+ *      Author: user
  */
 
 #ifndef PATHFINDER_H_
@@ -12,9 +12,9 @@
 #include <vector>
 #include <cstddef>
 #include "Point.h"
-#include "../Position.h"
-#include "../Location.h"
-#include "../Matrix.h"
+#include "../Utils/Position.h"
+#include "../Utils/Location.h"
+#include "../Map/Matrix.h"
 
 using namespace std;
 

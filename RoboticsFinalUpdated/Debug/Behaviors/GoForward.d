@@ -1,6 +1,6 @@
 Behaviors/GoForward.d Behaviors/GoForward.o: ../Behaviors/GoForward.cpp \
   ../Behaviors/GoForward.h ../Behaviors/BehaviorBase.h \
-  ../Behaviors/../Robot.h \
+  ../Behaviors/../Robot/Robot.h \
   /usr/local/include/player-2.0/libplayerc++/playerc++.h \
   /usr/local/include/player-2.0/libplayerc/playerc.h \
   /usr/local/include/player-2.0/libplayercore/player.h \
@@ -14,22 +14,26 @@ Behaviors/GoForward.d Behaviors/GoForward.o: ../Behaviors/GoForward.cpp \
   /usr/local/include/player-2.0/libplayerc++/playerclient.h \
   /usr/local/include/player-2.0/libplayerc++/playererror.h \
   /usr/local/include/player-2.0/libplayerc++/clientproxy.h \
-  ../Behaviors/../Map.h ../Behaviors/../lodepng.h \
-  ../Behaviors/../Matrix.h ../Behaviors/../Utils.h \
-  ../Behaviors/../ConfigurationManager.h \
-  ../Behaviors/../PathPlanning/Point.h \
-  ../Behaviors/../PathPlanning/../Location.h ../Behaviors/../Utils.h \
+  ../Behaviors/../Robot/../Map/Map.h \
+  ../Behaviors/../Robot/../Map/lodepng.h \
+  ../Behaviors/../Robot/../Map/Matrix.h \
+  ../Behaviors/../Robot/../Map/../Utils/Utils.h \
+  ../Behaviors/../Robot/../Map/../Utils/../Managers/ConfigurationManager.h \
+  ../Behaviors/../Robot/../Map/../PathPlanning/Point.h \
+  ../Behaviors/../Robot/../Map/../PathPlanning/../Utils/Location.h \
+  ../Behaviors/../Robot/../Map/../Managers/ConfigurationManager.h \
+  ../Behaviors/../Utils/Utils.h \
   ../Behaviors/../PathPlanning/WaypointsManager.h \
   ../Behaviors/../PathPlanning/Point.h \
-  ../Behaviors/../PathPlanning/../Position.h \
-  ../Behaviors/../PathPlanning/../Utils.h \
-  ../Behaviors/../PathPlanning/../Map.h
+  ../Behaviors/../PathPlanning/../Utils/Position.h \
+  ../Behaviors/../PathPlanning/../Utils/Utils.h \
+  ../Behaviors/../PathPlanning/../Map/Map.h
 
 ../Behaviors/GoForward.h:
 
 ../Behaviors/BehaviorBase.h:
 
-../Behaviors/../Robot.h:
+../Behaviors/../Robot/Robot.h:
 
 /usr/local/include/player-2.0/libplayerc++/playerc++.h:
 
@@ -57,28 +61,30 @@ Behaviors/GoForward.d Behaviors/GoForward.o: ../Behaviors/GoForward.cpp \
 
 /usr/local/include/player-2.0/libplayerc++/clientproxy.h:
 
-../Behaviors/../Map.h:
+../Behaviors/../Robot/../Map/Map.h:
 
-../Behaviors/../lodepng.h:
+../Behaviors/../Robot/../Map/lodepng.h:
 
-../Behaviors/../Matrix.h:
+../Behaviors/../Robot/../Map/Matrix.h:
 
-../Behaviors/../Utils.h:
+../Behaviors/../Robot/../Map/../Utils/Utils.h:
 
-../Behaviors/../ConfigurationManager.h:
+../Behaviors/../Robot/../Map/../Utils/../Managers/ConfigurationManager.h:
 
-../Behaviors/../PathPlanning/Point.h:
+../Behaviors/../Robot/../Map/../PathPlanning/Point.h:
 
-../Behaviors/../PathPlanning/../Location.h:
+../Behaviors/../Robot/../Map/../PathPlanning/../Utils/Location.h:
 
-../Behaviors/../Utils.h:
+../Behaviors/../Robot/../Map/../Managers/ConfigurationManager.h:
+
+../Behaviors/../Utils/Utils.h:
 
 ../Behaviors/../PathPlanning/WaypointsManager.h:
 
 ../Behaviors/../PathPlanning/Point.h:
 
-../Behaviors/../PathPlanning/../Position.h:
+../Behaviors/../PathPlanning/../Utils/Position.h:
 
-../Behaviors/../PathPlanning/../Utils.h:
+../Behaviors/../PathPlanning/../Utils/Utils.h:
 
-../Behaviors/../PathPlanning/../Map.h:
+../Behaviors/../PathPlanning/../Map/Map.h:

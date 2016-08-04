@@ -4,46 +4,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../AvoidObstaclesPlan.cpp \
-../ConfigurationManager.cpp \
-../LocalizationManager.cpp \
-../Location.cpp \
-../Main.cpp \
-../Map.cpp \
-../Matrix.cpp \
-../Particle.cpp \
-../Position.cpp \
-../Robot.cpp \
-../Utils.cpp \
-../lodepng.cpp 
+../Main.cpp 
 
 OBJS += \
-./AvoidObstaclesPlan.o \
-./ConfigurationManager.o \
-./LocalizationManager.o \
-./Location.o \
-./Main.o \
-./Map.o \
-./Matrix.o \
-./Particle.o \
-./Position.o \
-./Robot.o \
-./Utils.o \
-./lodepng.o 
+./Main.o 
 
 CPP_DEPS += \
-./AvoidObstaclesPlan.d \
-./ConfigurationManager.d \
-./LocalizationManager.d \
-./Location.d \
-./Main.d \
-./Map.d \
-./Matrix.d \
-./Particle.d \
-./Position.d \
-./Robot.d \
-./Utils.d \
-./lodepng.d 
+./Main.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

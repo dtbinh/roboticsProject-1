@@ -1,41 +1,44 @@
 PathPlanning/PathPlanner.d PathPlanning/PathPlanner.o:  \
  ../PathPlanning/PathPlanner.cpp ../PathPlanning/PathPlanner.h \
-  ../PathPlanning/../Map.h ../PathPlanning/../lodepng.h \
-  ../PathPlanning/../Matrix.h ../PathPlanning/../Utils.h \
-  ../PathPlanning/../ConfigurationManager.h \
-  ../PathPlanning/../PathPlanning/Point.h \
-  ../PathPlanning/../PathPlanning/../Location.h \
-  ../PathPlanning/../Utils.h ../PathPlanning/PathFinder.h \
-  ../PathPlanning/Point.h ../PathPlanning/../Position.h \
-  ../PathPlanning/../Location.h ../PathPlanning/../Matrix.h \
+  ../PathPlanning/../Map/Map.h ../PathPlanning/../Map/lodepng.h \
+  ../PathPlanning/../Map/Matrix.h ../PathPlanning/../Map/../Utils/Utils.h \
+  ../PathPlanning/../Map/../Utils/../Managers/ConfigurationManager.h \
+  ../PathPlanning/../Map/../PathPlanning/Point.h \
+  ../PathPlanning/../Map/../PathPlanning/../Utils/Location.h \
+  ../PathPlanning/../Map/../Managers/ConfigurationManager.h \
+  ../PathPlanning/../Utils/Utils.h ../PathPlanning/PathFinder.h \
+  ../PathPlanning/Point.h ../PathPlanning/../Utils/Position.h \
+  ../PathPlanning/../Utils/Location.h ../PathPlanning/../Map/Matrix.h \
   ../PathPlanning/WaypointsManager.h
 
 ../PathPlanning/PathPlanner.h:
 
-../PathPlanning/../Map.h:
+../PathPlanning/../Map/Map.h:
 
-../PathPlanning/../lodepng.h:
+../PathPlanning/../Map/lodepng.h:
 
-../PathPlanning/../Matrix.h:
+../PathPlanning/../Map/Matrix.h:
 
-../PathPlanning/../Utils.h:
+../PathPlanning/../Map/../Utils/Utils.h:
 
-../PathPlanning/../ConfigurationManager.h:
+../PathPlanning/../Map/../Utils/../Managers/ConfigurationManager.h:
 
-../PathPlanning/../PathPlanning/Point.h:
+../PathPlanning/../Map/../PathPlanning/Point.h:
 
-../PathPlanning/../PathPlanning/../Location.h:
+../PathPlanning/../Map/../PathPlanning/../Utils/Location.h:
 
-../PathPlanning/../Utils.h:
+../PathPlanning/../Map/../Managers/ConfigurationManager.h:
+
+../PathPlanning/../Utils/Utils.h:
 
 ../PathPlanning/PathFinder.h:
 
 ../PathPlanning/Point.h:
 
-../PathPlanning/../Position.h:
+../PathPlanning/../Utils/Position.h:
 
-../PathPlanning/../Location.h:
+../PathPlanning/../Utils/Location.h:
 
-../PathPlanning/../Matrix.h:
+../PathPlanning/../Map/Matrix.h:
 
 ../PathPlanning/WaypointsManager.h:

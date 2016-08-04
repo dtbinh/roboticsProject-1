@@ -1,3 +1,10 @@
+/*
+ * BehaviorBase.h
+ *
+*  Created on: Aug 1, 2016
+ *      Author: user
+ */
+
 #ifndef BEHAVIOR_H_
 #define BEHAVIOR_H_
 #define RIGHT_LIMIT_LASER_INDEX 260
@@ -8,8 +15,8 @@
 #define FORWARD_SPEED 0.06
 #define ROTATION_SPEED 0.03
 
-#include "../Robot.h"
-#include "../Utils.h"
+#include "../Robot/Robot.h"
+#include "../Utils/Utils.h"
 #include "../PathPlanning/WaypointsManager.h"
 
 class Behavior {

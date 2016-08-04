@@ -1,15 +1,15 @@
 /*
  * PathPlanner.h
  *
- *  Created on: Jul 17, 2015
- *      Author: colman
+ *  Created on: Aug 1, 2016
+ *      Author: user
  */
 
 #ifndef PATHPLANNER_H_
 #define PATHPLANNER_H_
 
-#include "../Map.h"
-#include "../Utils.h"
+#include "../Map/Map.h"
+#include "../Utils/Utils.h"
 #include "PathFinder.h"
 #include "WaypointsManager.h"
 

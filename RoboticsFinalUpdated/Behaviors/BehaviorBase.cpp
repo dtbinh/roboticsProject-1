@@ -1,3 +1,9 @@
+/*
+ * BehaviorBase.cpp
+ *
+*  Created on: Aug 1, 2016
+ *      Author: user
+ */
 #include "BehaviorBase.h"
 
 bool Behavior::addNextBehavior(Behavior* behaviorToAdd)

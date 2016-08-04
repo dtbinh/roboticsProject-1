@@ -9,7 +9,12 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir.mk
+-include Utils/subdir.mk
+-include Robot/subdir.mk
 -include PathPlanning/subdir.mk
+-include Particle/subdir.mk
+-include Map/subdir.mk
+-include Managers/subdir.mk
 -include Behaviors/subdir.mk
 -include objects.mk
 

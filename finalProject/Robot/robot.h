@@ -14,14 +14,14 @@
 #include "../WaypointsManager/node.h"
 
 using namespace std;
-using namespace PlayerCc;
+//using namespace PlayerCc;
 
 class Robot {
 
 private:
-	PlayerClient* _PlayerClient;
-	Position2dProxy* _PositionProxy;
-	LaserProxy* _laserProxy;
+	PlayerCc::PlayerClient* _PlayerClient;
+	PlayerCc::Position2dProxy* _PositionProxy;
+	PlayerCc::LaserProxy* _laserProxy;
 	double X;
 	double Y;
 	double Yaw;

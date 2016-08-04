@@ -4,25 +4,25 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../Behaviors/Behavior.cpp \
-../Behaviors/MoveForward.cpp \
-../Behaviors/MoveToWaypoint.cpp \
-../Behaviors/TurnLeft.cpp \
-../Behaviors/TurnRight.cpp 
+../Behaviors/behavior.cpp \
+../Behaviors/move_forward.cpp \
+../Behaviors/move_to_way_point.cpp \
+../Behaviors/turn_left.cpp \
+../Behaviors/turn_right.cpp 
 
 OBJS += \
-./Behaviors/Behavior.o \
-./Behaviors/MoveForward.o \
-./Behaviors/MoveToWaypoint.o \
-./Behaviors/TurnLeft.o \
-./Behaviors/TurnRight.o 
+./Behaviors/behavior.o \
+./Behaviors/move_forward.o \
+./Behaviors/move_to_way_point.o \
+./Behaviors/turn_left.o \
+./Behaviors/turn_right.o 
 
 CPP_DEPS += \
-./Behaviors/Behavior.d \
-./Behaviors/MoveForward.d \
-./Behaviors/MoveToWaypoint.d \
-./Behaviors/TurnLeft.d \
-./Behaviors/TurnRight.d 
+./Behaviors/behavior.d \
+./Behaviors/move_forward.d \
+./Behaviors/move_to_way_point.d \
+./Behaviors/turn_left.d \
+./Behaviors/turn_right.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
